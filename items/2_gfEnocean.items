@@ -1,0 +1,46 @@
+//
+
+//Dimmers FUD/FSG/FLD
+Dimmer gdimmer1  "Living Spot [%.0f ]" <slider> (gLiv)          ["Switch","Light"]  {channel="enocean:centralCommand:ftdigf:gdm1:dimmer"}
+Dimmer gdimmer2  "Bed 1 [%.0f ]" <slider> (fBed1)           ["Switch","Light"]  {channel="enocean:centralCommand:ftdigf:gdm2:dimmer"}
+Dimmer gdimmer3  "Bed 2 [%.0f ]" <slider> (fBed2)           ["Switch","Light"]  {channel="enocean:centralCommand:ftdigf:gdm3:dimmer"}
+Dimmer gdimmer4  "Bathroom [%.0f ]" <slider> (fMainBath)        ["Switch","Light"]  {channel="enocean:centralCommand:ftdigf:gdm4:dimmer"}
+
+//ON-OFF FSR14-4X/2X
+Switch gswitch1  "Living Led" <light> (gLiv)         ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc01:generalSwitch"} 
+Switch gswitch2  "L3 Spare" <light> (gSpare)                  ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc02:generalSwitch"} 
+
+Switch gswitch3  "L4 Spare" <light> (gSpare)                        ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc03:generalSwitch"} 
+Switch gswitch4  "Kitchen" <light> (gKitc)                         ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc04:generalSwitch"} 
+
+Switch gswitch5  "L8 Spare" <light> (gSpare)                   ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc05:generalSwitch"} 
+Switch gswitch6  "L9 Spare" <fan> (gSpare)                             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc06:generalSwitch"} 
+
+Switch gswitch7  "L10 Spare" <light> (gSpare)                     ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc07:generalSwitch"} 
+Switch gswitch8  "L11 Spare" <light> (gSpare)                   ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc08:generalSwitch"} 
+
+Switch gswitch9  "L13" <light> (gOutdoor)                 ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc09:generalSwitch"} 
+Switch gswitch10 "L14" <light> (gOutdoor)                     ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc10:generalSwitch"} 
+
+Switch gswitch11 "L15" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc11:generalSwitch"} 
+Switch gswitch12 "L16" <light> (gOutdoor)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc12:generalSwitch"} 
+
+Switch gswitch13 "L17" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc13:generalSwitch"} 
+Switch gswitch14 "L18" <light> (gOutdoor)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc14:generalSwitch"} 
+
+Switch gswitch15 "L19" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc15:generalSwitch"} 
+Switch gswitch16 "L20" <light> (gOutdoor)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc16:generalSwitch"} 
+
+Switch gswitch17 "L21" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc17:generalSwitch"} 
+Switch gswitch18 "L22" <light> (gOutdoor)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc18:generalSwitch"} 
+
+Rollershutter gmotor1  "G/M1 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh1:rollershutter"}
+Rollershutter gmotor2  "G/M2 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh2:rollershutter"}
+Rollershutter gmotor3  "G/M3 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh3:rollershutter"}
+Rollershutter gmotor4  "G/M4 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh4:rollershutter"}
+Rollershutter gmotor5  "G/M5 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh5:rollershutter"}
+Rollershutter gmotor6  "G/M6 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh6:rollershutter"}
+
+Switch cargate "Car Gate"      <garagedoor> (gService)  
+    [DOOR] {channel="enocean:classicDevice:ftdigf:gfmz1:control1",
+            channel="enocean:classicDevice:ftdigf:gfmz1:status1"}//,autoupdate="true"}

@@ -1,0 +1,68 @@
+Bridge enocean:bridge:ftdigf "FTDI-GF"[path="/dev/ttyUSB0",espVersion="ESP2",rs485BaseId="00003000",rs485=true,enableSmack=false,sendTeachOuts=false]
+{   ///dev/ttyUSB_DEVICE_FTDI_GF
+     /*
+       Eltako DIMMER FUD OR FLD OR FSG
+       PCT14 FUNCTION 32 dimming value of GFVS
+     */                      
+    
+    Thing centralCommand gdm1  "G/FUD14/01" @ "DIMMER"          [ enoceanId="00000001", senderIdOffset=1, sendingEEPId="A5_38_08_02", receivingEEPId="A5_38_08_02", broadcastMessages=false, suppressRepeating=false ]
+    Thing centralCommand gdm2  "G/FUD14/02" @ "DIMMER"          [ enoceanId="00000006", senderIdOffset=6, sendingEEPId="A5_38_08_02", receivingEEPId="A5_38_08_02", broadcastMessages=false, suppressRepeating=false ]
+    Thing centralCommand gdm3  "G/FUD14/03" @ "DIMMER"          [ enoceanId="00000007", senderIdOffset=7, sendingEEPId="A5_38_08_02", receivingEEPId="A5_38_08_02", broadcastMessages=false, suppressRepeating=false ]
+    Thing centralCommand gdm4  "G/FUD14/04" @ "DIMMER"          [ enoceanId="0000000C", senderIdOffset=12, sendingEEPId="A5_38_08_02", receivingEEPId="A5_38_08_02", broadcastMessages=false, suppressRepeating=false ]
+
+    Thing centralCommand gcc01 "G/FSR2X-1A" @ "ON-OFF-LIGHT"    [ enoceanId="00000002", senderIdOffset=2, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc02 "G/FSR2X-1B" @ "ON-OFF-LIGHT"    [ enoceanId="00000003", senderIdOffset=3, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+
+    Thing centralCommand gcc03 "G/FSR2X-2A" @ "ON-OFF-LIGHT"    [ enoceanId="00000004", senderIdOffset=4, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc04 "G/FSR2X-2B" @ "ON-OFF-LIGHT"    [ enoceanId="00000005", senderIdOffset=5, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+   
+    Thing centralCommand gcc05 "G/FSR2X-3A" @ "ON-OFF-LIGHT"    [ enoceanId="00000008", senderIdOffset=8, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc06 "G/FSR2X-3B" @ "ON-OFF-LIGHT"    [ enoceanId="00000009", senderIdOffset=9, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+
+    Thing centralCommand gcc07 "G/FSR2X-4A" @ "ON-OFF-LIGHT"    [ enoceanId="0000000A", senderIdOffset=10, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc08 "G/FSR2X-4B" @ "ON-OFF-LIGHT"    [ enoceanId="0000000B", senderIdOffset=11, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    
+    Thing centralCommand gcc09 "G/FSR2X-5A" @ "ON-OFF-LIGHT"    [ enoceanId="0000000D", senderIdOffset=13, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc10 "G/FSR2X-5B" @ "ON-OFF-LIGHT"    [ enoceanId="0000000E", senderIdOffset=14, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+   
+    Thing centralCommand gcc11 "G/FSR2X-6A" @ "ON-OFF-LIGHT"    [ enoceanId="0000000F", senderIdOffset=15, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc12 "G/FSR2X-6B" @ "ON-OFF-LIGHT"    [ enoceanId="00000010", senderIdOffset=16, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+
+    Thing centralCommand gcc13 "G/FSR2X-7A" @ "ON-OFF-LIGHT"    [ enoceanId="00000011", senderIdOffset=17, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc14 "G/FSR2X-7B" @ "ON-OFF-LIGHT"    [ enoceanId="00000012", senderIdOffset=18, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+
+    Thing centralCommand gcc15 "G/FSR4X-1A" @ "ON-OFF-LIGHT"    [ enoceanId="00000013", senderIdOffset=19, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc16 "G/FSR4X-1B" @ "ON-OFF-LIGHT"    [ enoceanId="00000014", senderIdOffset=20, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc17 "G/FSR4X-1C" @ "ON-OFF-LIGHT"    [ enoceanId="00000015", senderIdOffset=21, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+    Thing centralCommand gcc18 "G/FSR4X-1D" @ "ON-OFF-LIGHT"    [ enoceanId="00000016", senderIdOffset=22, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
+
+                             
+      /*
+       Eltako FSB14
+       PCT14 FUNCTION 31 operation command with time value trasmission of GFVS
+     */
+
+     Thing rollershutter grh1   "G/FSB14-1A" @ "MOTOR-UP-DOWN"   [ enoceanId="00000017", senderIdOffset=23, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+     Thing rollershutter grh2   "G/FSB14-1B" @ "MOTOR-UP-DOWN"   [ enoceanId="00000018", senderIdOffset=24, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+
+     Thing rollershutter grh3   "G/FSB14-2A" @ "MOTOR-UP-DOWN"   [ enoceanId="00000019", senderIdOffset=25, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+     Thing rollershutter grh4   "G/FSB14-2B" @ "MOTOR-UP-DOWN"   [ enoceanId="0000001A", senderIdOffset=26, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+
+     Thing rollershutter grh5   "G/FSB14-3A" @ "MOTOR-UP-DOWN"   [ enoceanId="0000001B", senderIdOffset=27, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+     Thing rollershutter grh6   "G/FSB14-3B" @ "MOTOR-UP-DOWN"   [ enoceanId="0000001C", senderIdOffset=28, sendingEEPId="A5_3F_7F_EltakoFSB", receivingEEPId="A5_3F_7F_EltakoFSB","F6_00_00",  broadcastMessages=true, suppressRepeating=false ] {Channels: Type rollershutter:rollershutter [shutTime=30]}
+
+    Thing classicDevice gfmz1   "G/FMZ/1" @ "FMZ" [ 
+             senderIdOffset=29,                  
+             sendingEEPId="F6_02_01",//_01 30/10, _02 10/30 
+             broadcastMessages=true, 
+             receivingEEPId="F6_02_01",
+             suppressRepeating=false 
+     ] 
+     {
+               Type virtualSwitchA             : control1 "Control 1"           [switchMode="rockerSwitch"]
+               //[duration=300, switchMode="rockerSwitch"]//duration in ms
+               Type rockerswitchListenerSwitch :  status1 "Status 1"            [enoceanId="0000001D", channel="channelB",switchMode="rockerSwitch"]
+     }
+
+
+}

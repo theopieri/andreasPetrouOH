@@ -1,0 +1,19 @@
+sitemap main label="Main" {
+
+    Frame label="Master Command"{
+      
+        //Switch item=gIndoor  mappings=[OFF='All OFF']
+        //Group item=gIndoor
+        Switch item=gGroundFloor mappings=[ON='All On',OFF='All OFF']
+        Switch item=gOutdoor mappings=[ON='All On',OFF='All OFF']
+    }
+
+    Frame label="House" {
+        Group item=gGroundFloor
+        Group item=gOutdoor
+        Group item=gSpare
+        Group item=gService
+
+    }        
+
+}

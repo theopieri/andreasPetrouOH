@@ -1,0 +1,63 @@
+/*
+Create All Group HERE!!!!!!!!!!!!!!!
+["Measurement", "Temperature"]
+https://community.openhab.org/t/oh3-semantic-model-setup-via-tags-in-configuration-items-files/112520
+
+https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv
+*/
+
+//HOUSE MODEL
+Group:Switch:OR(ON, OFF) All       "ALL [(%d)]" <corridor> // ["House"]
+Group gService "Services" <niveau>
+Group gBat     "Batteries Level" (gService)
+//INDOOR
+Group:Switch:OR(ON, OFF) gIndoor "Indoor [(%d)]" ["Indoor"] 
+Group:Switch:OR(ON, OFF) AcS "AC'S [(%d)]" ["BoilerRoom"]
+Switch acMasterOFF "AC'S" <snow>   
+Switch Season "Summer/Winter" (gService)     
+//GROUND FLOOR
+Group:Switch:OR(ON, OFF) gGroundFloor "Ground Floor [(%d)]" <groundfloor> (gIndoor) ["GroundFloor"] {widgetOrder="1"}
+    Group:Switch:OR(ON, OFF) gLivall  "Living [(%d)]" <living>  /*(gGroundFloor) ["LivingRoom"]*/ //{widgetOrder="3"}
+        Group:Switch:OR(ON, OFF) gLiv  "Living [(%d)]" <living>  (gGroundFloor)            ["LivingRoom"] {ga="Light",widgetOrder="3"}
+        Group gLivAC                   "Living climate [(%d)]" <living>  /*(gLivall)  ["Lightbulb"]*/ //{widgetOrder="3"}
+    Group:Switch:OR(ON, OFF) gKitcall "Dining-Kitchen [(%d)]" <kitchen>  /*(gGroundFloor)  ["Kitchen"]*/// {widgetOrder="4"}
+        Group:Switch:OR(ON, OFF) gKitc "Dining-Kitchen [(%d)]" <kitchen>  (gGroundFloor)  ["Kitchen"] {ga="Light",widgetOrder="4"}
+        Group gKitcAC                  "Dining-Kitchen climate" <kitchen>  /*(gKitcall)  ["Lightbulb"] *///{widgetOrder="4"}
+        { ga="AC_Unit" [ 
+        //fanSpeeds="0=null:off,50=slow,100=full:fast", 
+        //fanModeName="OperationMode,Modus", 
+        //fanModeSettings="1=Silent,2=Normal,3=Night", 
+        thermostatModes="off=OFF,heat=HEAT,on=ON,cool=COOL", 
+        thermostatTemperatureRange="10,30", 
+        useFahrenheit=false, lang="en", 
+        ordered=true ] }
+        Group:Switch:OR(ON, OFF) fBed1All "Master Bedroom [(%d)]" <bedroom_blue> /*(gFirstFloor) ["Bedroom"] */{ga="Light",widgetOrder="8"}
+        Group:Switch:OR(ON, OFF) fBed1 "Master Bedroom [(%d)]" <bedroom_blue> (gGroundFloor) ["Bedroom"] //{widgetOrder="8"}
+        Group fBed1AC           "Master Bedroom climate" <bedroom_blue> /*(fBed1All) ["Lightbulb"]*/ // {widgetOrder="8"}
+        { ga="AC_Unit" [ 
+        //fanSpeeds="0=null:off,50=slow,100=full:fast", 
+        //fanModeName="OperationMode,Modus", 
+        //fanModeSettings="1=Silent,2=Normal,3=Night", 
+        thermostatModes="off=OFF,heat=HEAT,on=ON,cool=COOL", 
+        thermostatTemperatureRange="10,30", 
+        useFahrenheit=false, lang="en", 
+        ordered=true ] }
+        //Group:Switch:OR(ON, OFF) fBed1Bath "Master Bathroom [(%d)]" <bath>  (gFirstFloor)   ["Bathroom"] {widgetOrder="9"}
+    Group:Switch:OR(ON, OFF) fBed2all "Bed 2 [(%d)]" <bedroom_red> /*(gFirstFloor) ["Bedroom"]*/ //{widgetOrder="10"}
+        Group:Switch:OR(ON, OFF) fBed2 "Bed 2 [(%d)]" <bedroom_red> (gGroundFloor) ["Bedroom"] {ga="Light",widgetOrder="10"}
+        Group fBed2ac "Bed 2  climate" <bedroom_red> /*(fBed2all) ["Lightbulb"] */ { ga="AC_Unit" [ 
+        //fanSpeeds="0=null:off,50=slow,100=full:fast", 
+        //fanModeName="OperationMode,Modus", 
+        //fanModeSettings="1=Silent,2=Normal,3=Night", 
+        thermostatModes="off=OFF,heat=HEAT,on=ON,cool=COOL", 
+        thermostatTemperatureRange="10,30", 
+        useFahrenheit=false, lang="en", 
+        ordered=true ] }
+
+
+    Group:Switch:OR(ON, OFF) fMainBath "Main Bathroom [(%d)]" <bath>   (gGroundFloor) ["Bathroom"] {ga="Light",widgetOrder="12"}
+    
+    Group:Switch:OR(ON, OFF) gSpare "GF SPARE CHANNEL [(%d)]" <niveau>  //  ["BoilerRoom"]
+    
+//OUTDOOR
+Group:Switch:OR(ON, OFF) gOutdoor "Outdoor [(%d)]"  <garden>  ["Outdoor"] {ga="Light",widgetOrder="13"}
