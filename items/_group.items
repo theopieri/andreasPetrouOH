@@ -9,12 +9,12 @@ https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.seman
 //HOUSE MODEL
 Group:Switch:OR(ON, OFF) All       "ALL [(%d)]" <corridor> // ["House"]
 Group gService "Services" <niveau>
-Group gBat     "Batteries Level" (gService)
+//Group gBat     "Batteries Level" (gService)
 //INDOOR
 Group:Switch:OR(ON, OFF) gIndoor "Indoor [(%d)]" ["Indoor"] 
 Group:Switch:OR(ON, OFF) AcS "AC'S [(%d)]" ["BoilerRoom"]
 Switch acMasterOFF "AC'S" <snow>   
-Switch Season "Summer/Winter" (gService)     
+//Switch Season "Summer/Winter" (gService)     
 //GROUND FLOOR
 Group:Switch:OR(ON, OFF) gGroundFloor "Ground Floor [(%d)]" <groundfloor> (gIndoor) ["GroundFloor"] {widgetOrder="1"}
     Group:Switch:OR(ON, OFF) gLivall  "Living [(%d)]" <living>  /*(gGroundFloor) ["LivingRoom"]*/ //{widgetOrder="3"}

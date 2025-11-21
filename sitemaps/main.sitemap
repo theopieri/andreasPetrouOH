@@ -1,19 +1,20 @@
 sitemap main label="Main" {
 
     Frame label="Master Command"{
-      
-        //Switch item=gIndoor  mappings=[OFF='All OFF']
-        //Group item=gIndoor
         Switch item=gGroundFloor mappings=[ON='All On',OFF='All OFF']
         Switch item=gOutdoor mappings=[ON='All On',OFF='All OFF']
+        Switch item=hotwater  mappings=[ON='1 Hour', OFF='OFF']
     }
 
     Frame label="House" {
-        Group item=gGroundFloor
+        Group item=gLiv
+        Group item=gKitc
+        Group item=fBed1
+        Group item=fBed2
+        Group item=fMainBath
         Group item=gOutdoor
-        Group item=gSpare
         Group item=gService
-
+        Group item=gSpare
     }        
 
 }
