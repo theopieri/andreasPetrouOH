@@ -3,18 +3,61 @@ sitemap main label="Main" {
     Frame label="Master Command"{
         Switch item=gGroundFloor mappings=[ON='All On',OFF='All OFF']
         Switch item=gOutdoor mappings=[ON='All On',OFF='All OFF']
-        Switch item=hotwater  mappings=[ON='1 Hour', OFF='OFF']
+        Switch item=gfCurtains mappings=[UP='UP',DOWN='DOWN']
+         Switch item=hotwater  mappings=[ON='1 Hour', OFF='OFF']
+        Group item=gfCurtains
     }
 
     Frame label="House" {
-        Group item=gLiv
-        Group item=gKitc
-        Group item=fBed1
-        Group item=fBed2
-        Group item=fMainBath
+        Group item=gLiv{
+            Frame label="Lighing" {
+                Slider item=gdimmer1
+                Switch item=gswitch1
+            }
+            Frame label="Shutter" {
+                Default item=gmotor4
+                Default item=gmotor5
+            }
+        }
+        Group item=gKitc{
+            Frame label="Lighing" {
+                Switch item=gswitch4
+                Switch item=gswitch3
+            }
+            Frame label="Shutter" {
+                Default item=gmotor1
+            }
+        }
+           
+        Group item=fBed1{
+            Frame label="Lighing" {
+                    Slider item=gdimmer3
+                    Switch item=gswitch7
+                }
+                Frame label="Shutter" {
+                    Default item=gmotor2
+                }
+            }
+        Group item=fBed2{
+            Frame label="Lighing" {
+                    Slider item=gdimmer2
+                    Switch item=gswitch2
+                }
+                Frame label="Shutter" {
+                    Default item=gmotor3
+                }
+            }
+        Group item=fMainBath{
+            Frame label="Lighing" {
+                    Slider item=gdimmer4
+                    Switch item=gswitch5
+                    Switch item=gswitch6
+                }
+            }
+        
         Group item=gOutdoor
-        Group item=gService
-        Group item=gSpare
+        //Group item=gService
+        //Group item=gSpare
     }        
 
 }

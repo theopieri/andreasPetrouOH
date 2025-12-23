@@ -8,12 +8,12 @@ Dimmer gdimmer4  "Bathroom [%.0f ]" <slider> (fMainBath)        ["Switch","Light
 
 //ON-OFF FSR14-4X/2X
 Switch gswitch1  "Living Led" <light> (gLiv)         ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc01:generalSwitch"} 
-Switch gswitch2  "L3 Spare" <light> (gSpare)                  ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc02:generalSwitch"} 
+Switch gswitch2  "Bed 2 Wardrobe" <light> (fBed2)                  ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc02:generalSwitch"} 
 
-Switch gswitch3  "L4 Spare" <light> (gSpare)                        ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc03:generalSwitch"} 
+Switch gswitch3  "Kitchen Under" <light> (gKitc)                        ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc03:generalSwitch"} 
 Switch gswitch4  "Kitchen" <light> (gKitc)                         ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc04:generalSwitch"} 
 
-Switch gswitch5  "L8 Spare" <light> (gSpare)                   ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc05:generalSwitch"} 
+Switch gswitch5  "Bath Mirror" <light>                    ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc05:generalSwitch"} 
 Switch gswitch6  "Corridor" <light> (fMainBath)                             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc06:generalSwitch"} 
 
 Switch gswitch7  "Sente" <light> (fBed1)                     ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc07:generalSwitch"} 
@@ -28,18 +28,20 @@ Switch gswitch12 "L16" <light> (gSpare)              ["Switch","Light"]{channel=
 Switch gswitch13 "Flat Living" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc13:generalSwitch"} 
 Switch gswitch14 "Flat Bed 2" <light> (gOutdoor)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc14:generalSwitch"} 
 
-Switch gswitch15 "Flat Bed 1L19" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc15:generalSwitch"} 
+Switch gswitch15 "Flat Bed 1" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc15:generalSwitch"} 
 Switch gswitch16 "L20" <light> (gSpare)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc16:generalSwitch"} 
 
 Switch gswitch17 "Kitchen Out" <light> (gOutdoor)             ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc17:generalSwitch"} 
 Switch gswitch18 "L22" <light> (gSpare)              ["Switch","Light"]{channel="enocean:centralCommand:ftdigf:gcc18:generalSwitch"} 
+Switch gsswitch18 "STATUS FSR4X-1D"  <contact> (gService)   { channel="enocean:genericThing:ftdigf:gscc18:genericSwitch"}
+String gsswitch18_s "Serial Status [%s]"  (gService)   
 
-Rollershutter gmotor1  "G/M1 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh1:rollershutter"}
-Rollershutter gmotor2  "G/M2 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh2:rollershutter"}
-Rollershutter gmotor3  "G/M3 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh3:rollershutter"}
-Rollershutter gmotor4  "G/M4 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh4:rollershutter"}
-Rollershutter gmotor5  "G/M5 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh5:rollershutter"}
-Rollershutter gmotor6  "G/M6 [%s]" (gService)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh6:rollershutter"}
+Rollershutter gmotor1  "Kitchen [%s]" (gfCurtains)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh1:rollershutter"}
+Rollershutter gmotor2  "Bed 1 [%s]" (gfCurtains)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh2:rollershutter"}
+Rollershutter gmotor3  "Bed 2 [%s]" (gfCurtains)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh3:rollershutter"}
+Rollershutter gmotor4  "Living Parking [%s]" (gfCurtains)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh4:rollershutter"}
+Rollershutter gmotor5  "Living Road [%s]" (gfCurtains)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh5:rollershutter"}
+Rollershutter gmotor6  "G/M6 [%s]" (gSpare)                    ["Control"] {channel="enocean:rollershutter:ftdigf:grh6:rollershutter"}
 
 Switch hotwater "Hot Water"      <water> (gService)  
     [DOOR] {channel="enocean:classicDevice:ftdigf:gfmz1:control1",

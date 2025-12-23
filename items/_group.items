@@ -16,6 +16,7 @@ Group:Switch:OR(ON, OFF) AcS "AC'S [(%d)]" ["BoilerRoom"]
 Switch acMasterOFF "AC'S" <snow>   
 //Switch Season "Summer/Winter" (gService)     
 //GROUND FLOOR
+Group:Rollershutter:AVG 	gfCurtains 	"Shutter Open/Close" <window>
 Group:Switch:OR(ON, OFF) gGroundFloor "Ground Floor [(%d)]" <groundfloor> (gIndoor) ["GroundFloor"] {widgetOrder="1"}
     Group:Switch:OR(ON, OFF) gLivall  "Living [(%d)]" <living>  /*(gGroundFloor) ["LivingRoom"]*/ //{widgetOrder="3"}
         Group:Switch:OR(ON, OFF) gLiv  "Living [(%d)]" <living>  (gGroundFloor)            ["LivingRoom"] {ga="Light",widgetOrder="3"}

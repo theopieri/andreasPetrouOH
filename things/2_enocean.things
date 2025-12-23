@@ -35,7 +35,10 @@ Bridge enocean:bridge:ftdigf "FTDI-GF"[path="/dev/ttyUSB0",espVersion="ESP2",rs4
     Thing centralCommand gcc16 "G/FSR4X-1B" @ "ON-OFF-LIGHT"    [ enoceanId="00000014", senderIdOffset=20, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
     Thing centralCommand gcc17 "G/FSR4X-1C" @ "ON-OFF-LIGHT"    [ enoceanId="00000015", senderIdOffset=21, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
     Thing centralCommand gcc18 "G/FSR4X-1D" @ "ON-OFF-LIGHT"    [ enoceanId="00000016", senderIdOffset=22, sendingEEPId="A5_38_08_01", receivingEEPId="F6_00_00", broadcastMessages=false, suppressRepeating=false ] 
-
+    Thing genericThing gscc18 "Status/1D" @ "sensor" [ enoceanId="00000016", sendingEEPId="F6_FF_FF", receivingEEPId="F6_FF_FF" ] {
+          Channels:
+               Type genericSwitch : genericSwitch [transformationType="MAP", transformationFunction="actionStatus.map"]
+     }    
                              
       /*
        Eltako FSB14
